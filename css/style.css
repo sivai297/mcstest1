@@ -5122,16 +5122,10 @@ header nav a{
 }
 
 .hero-left{
-    flex:0 0 52%;
+    flex:0 0 60%;
     max-width:520px;
 }
 
-.hero-right{
-    flex:0 0 48%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
 .hero-left p{
     max-width:470px;
     line-height:1.8;
