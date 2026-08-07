@@ -1,0 +1,5031 @@
+/*========================================
+MCS WEBSITE STYLE CSS
+VERSION 3.0
+PART 1A
+ROOT + RESET + COMMON + LOADER
+========================================*/
+
+/*========================================
+ROOT VARIABLES
+========================================*/
+
+:root{
+
+    --primary:#22C55E;
+    --primary-dark:#16A34A;
+    --secondary:#0F172A;
+
+    --light:#F8FAFC;
+    --white:#FFFFFF;
+    --gray:#64748B;
+
+    --border:#E2E8F0;
+
+    --shadow:0 15px 35px rgba(0,0,0,.08);
+
+    --transition:.35s ease;
+
+}
+
+/*========================================
+RESET
+========================================*/
+
+*,
+*::before,
+*::after{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#fff;
+    color:var(--secondary);
+    overflow-x:hidden;
+
+}
+
+img{
+
+    display:block;
+    width:100%;
+    max-width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+button,
+input,
+textarea{
+
+    border:none;
+    outline:none;
+    background:none;
+    font-family:inherit;
+
+}
+
+button{
+
+    cursor:pointer;
+
+}
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/*========================================
+COMMON SECTION
+========================================*/
+
+section{
+
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+
+}
+
+.section-title{
+
+    max-width:750px;
+    margin:0 auto 60px;
+    text-align:center;
+
+}
+
+.section-title h5{
+
+    color:var(--primary);
+    font-size:15px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+
+}
+
+.section-title h2{
+
+    color:var(--secondary);
+    font-size:38px;
+    font-weight:800;
+    margin-bottom:18px;
+
+}
+
+.section-title p{
+
+    color:var(--gray);
+    line-height:1.8;
+
+}
+
+/*========================================
+LOADER
+========================================*/
+
+#loader{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#fff;
+
+    z-index:9999;
+
+    transition:.5s ease;
+
+}
+
+.loader-hide{
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+}
+
+.loader-box{
+
+    text-align:center;
+
+}
+
+.loader-box img{
+
+    width:100px;
+    margin:auto;
+
+    animation:loaderLogo 2s infinite;
+
+}
+
+.loader-box h1{
+
+    margin-top:15px;
+    font-size:45px;
+    color:var(--primary);
+
+}
+
+.loader-box p{
+
+    color:var(--gray);
+
+}
+
+.loading-bar{
+
+    width:220px;
+    height:6px;
+
+    margin:25px auto;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    background:#E2E8F0;
+
+}
+
+.loading-bar span{
+
+    display:block;
+
+    width:40%;
+    height:100%;
+
+    background:var(--primary);
+
+    animation:loading 1.5s infinite;
+
+}
+
+/*========================================
+ANIMATIONS
+========================================*/
+
+@keyframes loading{
+
+    from{
+
+        transform:translateX(-120%);
+
+    }
+
+    to{
+
+        transform:translateX(300%);
+
+    }
+
+}
+
+@keyframes loaderLogo{
+
+    50%{
+
+        transform:scale(1.1);
+
+    }
+
+}
+/*========================================
+INTRO VIDEO
+========================================*/
+
+#home.hero{
+
+    position:relative;
+    width:100%;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+
+}
+
+.hero-video{
+
+    display:block;
+    width:100%;
+    max-width:1280px;
+    height:auto;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    margin:0 auto;
+
+}
+
+.intro-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.55)
+    );
+
+}
+
+.intro-content{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:#fff;
+
+    padding:20px;
+
+}
+
+.intro-logo img{
+
+    width:110px;
+    margin-bottom:25px;
+
+}
+
+.intro-bottom h1{
+
+    font-size:48px;
+    font-weight:800;
+    margin-bottom:15px;
+
+}
+
+.intro-bottom p{
+
+    font-size:20px;
+    color:#E2E8F0;
+
+}
+
+@media(max-width:768px){
+
+    .intro-logo img{
+
+        width:80px;
+
+    }
+
+    .intro-bottom h1{
+
+        font-size:30px;
+
+    }
+
+    .intro-bottom p{
+
+        font-size:16px;
+
+    }
+
+}
+
+/*========================================
+HEADER
+========================================*/
+
+header{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:90px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 8%;
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid var(--border);
+
+    z-index:1000;
+
+    transition:.35s ease;
+
+}
+
+header.sticky{
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/*========================================
+LOGO
+========================================*/
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:60px;
+    height:60px;
+
+    object-fit:contain;
+
+}
+
+.logo h2{
+
+    font-size:28px;
+    font-weight:800;
+
+    color:var(--secondary);
+
+    line-height:1;
+
+}
+
+.logo span{
+
+    display:block;
+
+    color:var(--gray);
+
+    font-size:12px;
+    font-weight:500;
+
+}
+/*========================================
+NAVIGATION
+========================================*/
+
+nav{
+
+    display:flex;
+    align-items:center;
+    gap:35px;
+
+}
+
+nav a{
+
+    position:relative;
+
+    color:var(--secondary);
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:3px;
+
+    border-radius:30px;
+
+    background:var(--primary);
+
+    transition:.3s;
+
+}
+
+nav a:hover,
+nav a.active{
+
+    color:var(--primary);
+
+}
+
+nav a:hover::after,
+nav a.active::after{
+
+    width:100%;
+
+}
+
+/*========================================
+NAV BUTTONS
+========================================*/
+
+.nav-buttons{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.btn-green,
+.btn-white{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-green{
+
+    background:var(--primary);
+    color:#fff;
+
+}
+
+.btn-green:hover{
+
+    background:var(--primary-dark);
+    transform:translateY(-3px);
+
+}
+
+.btn-white{
+
+    background:#fff;
+
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+
+}
+
+.btn-white:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/*========================================
+MENU ICON
+========================================*/
+
+#menu{
+
+    display:none;
+
+    font-size:30px;
+
+    color:var(--secondary);
+
+    cursor:pointer;
+
+}
+
+/*========================================
+MOBILE MENU
+========================================
+
+#mobileMenu{
+
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:320px;
+    height:100vh;
+
+    background:#fff;
+
+    z-index:2000;
+
+    padding:25px;
+
+    transition:.35s ease;
+
+    box-shadow:-10px 0 30px rgba(0,0,0,.15);
+
+}
+
+#mobileMenu.active{
+
+    right:0;
+
+}
+
+.mobile-top{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:35px;
+
+}
+
+.mobile-top img{
+
+    width:55px;
+
+}
+
+.mobile-top h2{
+
+    margin-left:15px;
+    margin-right:auto;
+
+}
+
+.mobile-top i{
+
+    font-size:26px;
+
+    color:#ef4444;
+
+    cursor:pointer;
+
+}
+
+#mobileMenu a{
+
+    display:block;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--secondary);
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#mobileMenu a:hover{
+
+    color:var(--primary);
+
+    padding-left:10px;
+
+}
+
+.mobile-whatsapp{
+
+    margin-top:25px;
+
+    background:#25D366;
+
+    color:#fff !important;
+
+    text-align:center;
+
+    border-radius:50px;
+
+}
+
+.mobile-whatsapp i{
+
+    margin-right:8px;
+
+}*/
+
+/*========================================
+HEADER RESPONSIVE
+========================================*/
+
+@media(max-width:1100px){
+
+    nav,
+    .nav-buttons{
+
+        display:none;
+
+    }
+
+    #menu{
+
+        display:block;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    header{
+
+        height:80px;
+
+        padding:0 5%;
+
+    }
+
+    .logo img{
+
+        width:50px;
+        height:50px;
+
+    }
+
+    .logo h2{
+
+        font-size:22px;
+
+    }
+/*========================================
+HERO SECTION
+========================================*/
+
+#home{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:#fff;
+
+}
+
+/*========================================
+HERO VIDEO
+========================================*/
+
+.hero-video{
+
+    display:block;
+
+    width:100%;
+
+    max-width:1280px;
+
+    aspect-ratio:16/9;
+
+    height:auto;
+
+    object-fit:cover;
+
+    margin:0 auto;
+
+}
+
+.intro-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.55)
+    );
+
+}
+
+.intro-content{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:#fff;
+
+    padding:20px;
+
+}
+
+/*========================================
+INTRO LOGO
+========================================*/
+
+.intro-logo img{
+
+    width:120px;
+
+    margin-bottom:20px;
+
+}
+
+.intro-bottom h1{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+}
+
+.intro-bottom p{
+
+    font-size:20px;
+
+    color:#E2E8F0;
+
+}
+
+/*========================================
+RESPONSIVE
+========================================*/
+
+@media(max-width:768px){
+
+    .hero-video{
+
+        width:100%;
+
+        aspect-ratio:16/9;
+
+        object-fit:cover;
+
+    }
+
+    .intro-logo img{
+
+        width:80px;
+
+    }
+
+    .intro-bottom h1{
+
+        font-size:30px;
+
+    }
+
+    .intro-bottom p{
+
+        font-size:16px;
+
+    }
+
+}
+    #mobileMenu{
+
+        width:280px;
+
+    }
+
+}
+/*========================================
+ABOUT SECTION
+========================================*/
+
+#about{
+
+    background:#fff;
+
+}
+
+
+.about-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+.about-image{
+
+    position:relative;
+
+}
+
+
+.about-image img{
+
+    width:100%;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+.about-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+/* About Content */
+
+.about-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+.about-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    padding:25px;
+
+    background:var(--light);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    transition:var(--transition);
+
+}
+
+
+.about-card:hover{
+
+    background:#fff;
+
+    transform:translateX(10px);
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.about-card i{
+
+    min-width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(34,197,94,.12);
+
+    color:var(--primary);
+
+    font-size:25px;
+
+}
+
+
+.about-card h3{
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+    color:var(--secondary);
+
+}
+
+
+.about-card p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
+
+
+/*========================================
+WHY CHOOSE SECTION
+========================================*/
+
+#why{
+
+    background:var(--light);
+
+}
+
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+.why-box{
+
+    background:#fff;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+
+.why-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow);
+
+    border-color:var(--primary);
+
+}
+
+
+.why-box i{
+
+    width:75px;
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:rgba(34,197,94,.12);
+
+    color:var(--primary);
+
+    font-size:32px;
+
+}
+
+
+.why-box h3{
+
+    font-size:19px;
+
+    margin-bottom:12px;
+
+}
+
+
+.why-box p{
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+}
+
+
+/*========================================
+COUNTER SECTION
+========================================*/
+
+#counter{
+
+    width:100%;
+
+    margin:40px 0;
+
+    padding:60px 8%;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    background:linear-gradient(
+        135deg,
+        #16A34A,
+        #22C55E
+    );
+
+    border-radius:0;
+
+}
+
+
+.counter-box{
+
+    text-align:center;
+
+    color:#fff;
+
+    padding:25px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    transition:var(--transition);
+
+}
+
+
+.counter-box:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+.counter-box h2{
+
+    font-size:45px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+}
+
+
+.counter-box p{
+
+    font-size:16px;
+
+}
+
+
+/*========================================
+RESPONSIVE
+========================================*/
+
+@media(max-width:1100px){
+
+    .why-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    #counter{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .about-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .about-card{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    #counter{
+
+        grid-template-columns:1fr;
+
+        padding:40px 20px;
+
+    }
+
+
+    .counter-box h2{
+
+        font-size:38px;
+
+    }
+
+}
+/*========================================
+SERVICES SECTION
+========================================*/
+
+#services{
+
+    background:#fff;
+
+}
+
+
+.service-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+.service-card{
+
+    background:#fff;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--primary);
+
+}
+
+
+.service-card i{
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:rgba(34,197,94,.12);
+
+    color:var(--primary);
+
+    font-size:35px;
+
+}
+
+
+.service-card h3{
+
+    color:var(--secondary);
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+}
+
+
+.service-card p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
+
+
+
+/*========================================
+PRODUCT CATEGORIES
+========================================*/
+
+#categories{
+
+    background:var(--light);
+
+}
+
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+.category-card{
+
+    background:#fff;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+.category-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:var(--primary);
+
+}
+
+
+.category-card img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:contain;
+
+    margin:0 auto 20px;
+
+}
+
+
+.category-card h3{
+
+    color:var(--secondary);
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+.category-card p{
+
+    color:var(--gray);
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+}
+
+
+.category-card a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 25px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.category-card a:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+
+/*========================================
+SEARCH SECTION
+========================================*/
+
+#search{
+
+    background:#fff;
+
+    padding:50px 8%;
+
+}
+
+
+.search-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    display:flex;
+
+    overflow:hidden;
+
+    border-radius:60px;
+
+    border:2px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.search-box input{
+
+    flex:1;
+
+    padding:20px 30px;
+
+    font-size:16px;
+
+    color:var(--secondary);
+
+}
+
+
+.search-box input::placeholder{
+
+    color:#94A3B8;
+
+}
+
+
+.search-box button{
+
+    padding:0 35px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+
+.search-box button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+
+/*========================================
+RESPONSIVE
+========================================*/
+
+@media(max-width:1100px){
+
+    .service-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .category-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:576px){
+
+    .service-grid,
+    .category-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .search-box{
+
+        flex-direction:column;
+
+        border-radius:20px;
+
+    }
+
+
+    .search-box button{
+
+        height:55px;
+
+    }
+
+}
+/*========================================
+FEATURED PRODUCTS
+========================================*/
+
+#products{
+
+    background:var(--light);
+
+}
+
+
+.product-grid,
+.products-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    gap:30px;
+
+}
+
+
+/*========================================
+PRODUCT CARD
+========================================*/
+
+.product-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#fff;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+
+/*========================================
+PRODUCT IMAGE
+========================================*/
+
+.product-image{
+
+    width:100%;
+
+    height:260px;
+
+    overflow:hidden;
+
+    background:#F8FAFC;
+
+}
+
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    transition:.5s;
+
+}
+
+
+.product-card:hover .product-image img{
+
+    transform:scale(1.05);
+
+}
+
+
+/* Firebase direct image support */
+
+.products-container .product-card > img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:contain;
+
+    background:#F8FAFC;
+
+}
+
+
+
+/*========================================
+PRODUCT CONTENT
+========================================*/
+
+.product-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    padding:25px;
+
+}
+
+
+.product-content h3{
+
+    color:var(--secondary);
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+.product-content p{
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+    margin-bottom:15px;
+
+}
+
+
+.product-content h4{
+
+    color:var(--primary-dark);
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* Warranty Badge */
+
+.warranty,
+.product-content span{
+
+    display:inline-block;
+
+    width:max-content;
+
+    padding:8px 18px;
+
+    margin-bottom:20px;
+
+    border-radius:50px;
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+/*========================================
+PRODUCT BUTTONS
+========================================*/
+
+.product-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:auto;
+
+}
+
+
+.product-buttons a,
+.products-container .product-card a{
+
+    flex:1;
+
+    display:block;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.product-buttons a:last-child{
+
+    background:#25D366;
+
+}
+
+
+.product-buttons a:hover,
+.products-container .product-card a:hover{
+
+    transform:translateY(-3px);
+
+    opacity:.9;
+
+}
+
+
+
+/* Firebase button */
+
+.products-container .product-card button{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+
+/*========================================
+RESPONSIVE
+========================================*/
+
+@media(max-width:1100px){
+
+    .product-grid,
+    .products-container{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+@media(max-width:576px){
+
+    .product-grid,
+    .products-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .product-image,
+    .products-container .product-card > img{
+
+        height:220px;
+
+    }
+
+
+    .product-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
+/* ==========================================
+   MCS FINAL UI VISIBILITY FIX
+   PART 4A
+========================================== */
+
+
+/* Remove old hide behaviour */
+
+body.hero-ui-hidden header,
+body.hero-ui-hidden #floatingWhatsapp,
+body.hero-ui-hidden .floating-whatsapp,
+body.hero-ui-hidden #scrollTop{
+
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+    transform:none !important;
+
+}
+
+
+/* Navbar Always Visible */
+
+header{
+
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+    transform:none !important;
+
+    transition:none !important;
+
+}
+
+
+/* Floating WhatsApp Always Visible */
+
+#floatingWhatsapp,
+.floating-whatsapp{
+
+    display:flex !important;
+
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+
+}
+
+
+/* Scroll Top Button */
+
+#scrollTop{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+/* If JS adds hide class remove effect */
+
+header.hide,
+#floatingWhatsapp.hide,
+.floating-whatsapp.hide,
+#scrollTop.hide{
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+
+    display:flex !important;
+
+    transform:none !important;
+
+}
+
+
+/* Fix broken transition block */
+
+header,
+#floatingWhatsapp,
+.floating-whatsapp,
+#scrollTop{
+
+    transition:
+    opacity .3s ease,
+    transform .3s ease;
+
+}
+
+
+/* Keep buttons above video */
+
+header{
+
+    z-index:9999 !important;
+
+}
+
+
+.floating-whatsapp,
+#floatingWhatsapp{
+
+    z-index:9998 !important;
+
+}
+
+
+#scrollTop{
+
+    z-index:9997 !important;
+
+}
+/* ==========================================
+   MCS INTRO VIDEO FINAL FIX
+   PART 4B
+   1280x720 LANDSCAPE RATIO
+========================================== */
+
+
+/* Hero Video Section */
+
+#home.hero{
+
+    width:100% !important;
+
+    height:auto !important;
+
+    min-height:0 !important;
+
+    padding:0 !important;
+
+    margin:0 !important;
+
+    overflow:hidden !important;
+
+    display:block !important;
+
+    position:relative !important;
+
+}
+
+
+
+/* Video */
+
+#home .hero-video{
+
+    display:block !important;
+
+    width:100% !important;
+
+    max-width:1280px !important;
+
+    height:auto !important;
+
+    aspect-ratio:16 / 9 !important;
+
+    object-fit:cover !important;
+
+    margin:0 auto !important;
+
+}
+
+
+
+/* Overlay */
+
+#home .intro-overlay{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+}
+
+
+
+/* Text over video */
+
+#home .intro-content{
+
+    position:absolute !important;
+
+    inset:0 !important;
+
+    display:flex !important;
+
+    justify-content:center !important;
+
+    align-items:center !important;
+
+}
+
+
+
+/* Desktop */
+
+@media(min-width:769px){
+
+    #home .hero-video{
+
+        max-height:720px !important;
+
+    }
+
+}
+
+
+
+/* Mobile Portrait */
+
+@media(max-width:768px){
+
+    #home.hero{
+
+        height:auto !important;
+
+        min-height:0 !important;
+
+    }
+
+
+    #home .hero-video{
+
+        width:100% !important;
+
+        height:auto !important;
+
+        max-height:none !important;
+
+        aspect-ratio:16 / 9 !important;
+
+        object-fit:cover !important;
+
+    }
+
+
+    #home .intro-content{
+
+        padding:15px !important;
+
+    }
+
+
+    #home .intro-logo img{
+
+        width:70px !important;
+
+    }
+
+
+    #home .intro-bottom h1{
+
+        font-size:22px !important;
+
+    }
+
+
+    #home .intro-bottom p{
+
+        font-size:14px !important;
+
+    }
+
+}
+/* ==========================================
+   MCS EMPTY SPACE & SECTION GAP FIX
+   PART 4C
+========================================== */
+
+
+/* Remove hero unwanted height */
+
+#home.hero{
+
+    min-height:0 !important;
+
+    height:auto !important;
+
+    padding:0 !important;
+
+    margin:0 !important;
+
+}
+
+
+/* Remove intro content extra height */
+
+#home .intro-content{
+
+    min-height:0 !important;
+
+    height:100% !important;
+
+}
+
+
+
+/* Remove section default spacing */
+
+#home + section{
+
+    margin-top:0 !important;
+
+}
+
+
+/* All sections clean spacing */
+
+section{
+
+    scroll-margin-top:90px;
+
+}
+
+
+
+/* Mobile Portrait Fix */
+
+@media(max-width:768px){
+
+
+    #home.hero{
+
+        min-height:0 !important;
+
+        height:auto !important;
+
+        padding:0 !important;
+
+    }
+
+
+    #home .intro-content{
+
+        padding:15px !important;
+
+    }
+
+
+    #home .intro-logo img{
+
+        width:65px !important;
+
+        margin-bottom:10px !important;
+
+    }
+
+
+    #home .intro-bottom h1{
+
+        margin-bottom:8px !important;
+
+        line-height:1.2 !important;
+
+    }
+
+
+    #home .intro-bottom p{
+
+        margin:0 !important;
+
+    }
+
+
+
+    /* remove extra blank after video */
+
+    #home{
+
+        margin-bottom:0 !important;
+
+    }
+
+
+
+}
+
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+
+    #home .intro-logo img{
+
+        width:55px !important;
+
+    }
+
+
+    #home .intro-bottom h1{
+
+        font-size:20px !important;
+
+    }
+
+
+    #home .intro-bottom p{
+
+        font-size:13px !important;
+
+    }
+
+
+}
+/* ==========================================
+   MCS NAVBAR + FLOATING BUTTON FINAL FIX
+   PART 4D
+========================================== */
+
+
+/* Header Always Top */
+
+header{
+
+    position:fixed !important;
+
+    top:0 !important;
+
+    left:0 !important;
+
+    width:100% !important;
+
+    z-index:9999 !important;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+
+}
+
+
+
+/* Prevent content hiding behind navbar */
+
+body{
+
+    padding-top:0 !important;
+
+}
+
+
+
+/* Mobile Header */
+
+@media(max-width:768px){
+
+
+    header{
+
+        height:75px !important;
+
+        padding:10px 4% !important;
+
+        display:flex !important;
+
+        justify-content:space-between !important;
+
+        align-items:center !important;
+
+    }
+
+
+    nav{
+
+        display:none !important;
+
+    }
+
+
+    .nav-buttons{
+
+        display:none !important;
+
+    }
+
+
+    #menu{
+
+        display:block !important;
+
+        cursor:pointer !important;
+
+    }
+
+
+    #mobileMenu{
+
+        display:block !important;
+
+        visibility:visible !important;
+
+    }
+
+}
+
+
+
+/* Mobile Menu Layer */
+
+#mobileMenu{
+
+    z-index:10000 !important;
+
+}
+
+
+
+/* Floating Whatsapp */
+
+.floating-whatsapp,
+#floatingWhatsapp{
+
+    position:fixed !important;
+
+    right:20px !important;
+
+    bottom:20px !important;
+
+    width:60px !important;
+
+    height:60px !important;
+
+    display:flex !important;
+
+    justify-content:center !important;
+
+    align-items:center !important;
+
+    z-index:9998 !important;
+
+}
+
+
+
+/* Scroll Top */
+
+#scrollTop{
+
+    position:fixed !important;
+
+    right:22px !important;
+
+    bottom:95px !important;
+
+    width:50px !important;
+
+    height:50px !important;
+
+    display:flex !important;
+
+    justify-content:center !important;
+
+    align-items:center !important;
+
+    z-index:9997 !important;
+
+}
+
+
+
+/* Mobile Button Position */
+
+@media(max-width:768px){
+
+
+    .floating-whatsapp,
+    #floatingWhatsapp{
+
+        width:55px !important;
+
+        height:55px !important;
+
+        right:15px !important;
+
+        bottom:15px !important;
+
+    }
+
+
+    #scrollTop{
+
+        width:45px !important;
+
+        height:45px !important;
+
+        right:18px !important;
+
+        bottom:85px !important;
+
+    }
+
+}
+
+
+
+/* Remove old hide animation */
+
+header.hide,
+.floating-whatsapp.hide,
+#floatingWhatsapp.hide,
+#scrollTop.hide{
+
+    display:flex !important;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+
+    transform:none !important;
+
+}
+/* ==========================================
+   MCS ABOUT + WHY SECTION
+   PART 4E
+========================================== */
+
+
+/* ==========================
+   ABOUT SECTION
+========================== */
+
+#about{
+
+    background:#ffffff;
+
+}
+
+
+.about-container{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+
+/* About Image */
+
+.about-image{
+
+    position:relative;
+
+}
+
+
+.about-image img{
+
+    width:100%;
+
+    max-width:550px;
+
+    border-radius:25px;
+
+    object-fit:cover;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+}
+
+
+.about-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+
+/* About Content */
+
+.about-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+.about-card{
+
+    background:#F8FAFC;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid #E2E8F0;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+    transition:.35s ease;
+
+}
+
+
+
+.about-card:hover{
+
+    background:#ffffff;
+
+    transform:translateX(10px);
+
+    border-color:#22C55E;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+}
+
+
+
+/* Icon */
+
+.about-card i{
+
+    min-width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+    rgba(34,197,94,.12);
+
+    color:#22C55E;
+
+    font-size:25px;
+
+}
+
+
+
+/* Text */
+
+.about-card h3{
+
+    color:#0F172A;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+}
+
+
+.about-card p{
+
+    color:#64748B;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+
+
+
+
+/* ==========================
+   WHY CHOOSE SECTION
+========================== */
+
+
+#why{
+
+    background:#F8FAFC;
+
+}
+
+
+
+.why-grid{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.why-box{
+
+    background:#ffffff;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    border:1px solid #E2E8F0;
+
+    transition:.35s ease;
+
+}
+
+
+
+.why-box:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#22C55E;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+}
+
+
+
+.why-box i{
+
+    width:75px;
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:
+    rgba(34,197,94,.12);
+
+    color:#22C55E;
+
+    font-size:32px;
+
+}
+
+
+
+.why-box h3{
+
+    color:#0F172A;
+
+    font-size:19px;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.why-box p{
+
+    color:#64748B;
+
+    line-height:1.6;
+
+    font-size:15px;
+
+}
+
+
+
+
+
+/* ==========================
+   ABOUT + WHY RESPONSIVE
+========================== */
+
+
+@media(max-width:1100px){
+
+
+    .why-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    .about-container{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+
+    .about-image{
+
+        text-align:center;
+
+    }
+
+
+    .about-image img{
+
+        margin:auto;
+
+    }
+
+
+    .about-card{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}
+
+
+@media(max-width:480px){
+
+
+    .about-card{
+
+        padding:20px;
+
+    }
+
+
+    .about-card h3{
+
+        font-size:18px;
+
+    }
+
+
+    .why-box{
+
+        padding:30px 20px;
+
+    }
+
+
+}
+/* ==========================================
+   MCS SERVICES + CATEGORIES SECTION
+   PART 4F
+========================================== */
+
+
+/* ==========================
+   SERVICES SECTION
+========================== */
+
+#services{
+
+    background:#ffffff;
+
+}
+
+
+
+.service-grid{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.service-card{
+
+    background:#ffffff;
+
+    padding:35px 25px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    border:1px solid #E2E8F0;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s ease;
+
+}
+
+
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#22C55E;
+
+}
+
+
+
+/* Service Icon */
+
+.service-card i{
+
+    width:80px;
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:
+    rgba(34,197,94,.12);
+
+    color:#22C55E;
+
+    font-size:35px;
+
+}
+
+
+
+.service-card h3{
+
+    color:#0F172A;
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+}
+
+
+
+.service-card p{
+
+    color:#64748B;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+
+
+
+
+/* ==========================
+   PRODUCT CATEGORIES
+========================== */
+
+
+#categories{
+
+    background:#F8FAFC;
+
+}
+
+
+
+.category-grid{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.category-card{
+
+    background:#ffffff;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    border:1px solid #E2E8F0;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+
+
+.category-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#22C55E;
+
+}
+
+
+
+/* Category Image */
+
+.category-card img{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 20px;
+
+    object-fit:contain;
+
+}
+
+
+
+.category-card h3{
+
+    color:#0F172A;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.category-card p{
+
+    color:#64748B;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Category Button */
+
+.category-card a{
+
+    display:inline-block;
+
+    padding:10px 25px;
+
+    border-radius:50px;
+
+    background:#22C55E;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+
+
+.category-card a:hover{
+
+    background:#16A34A;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* ==========================
+   SEARCH SECTION
+========================== */
+
+
+#search{
+
+    background:#ffffff;
+
+    padding:50px 8%;
+
+}
+
+
+
+.search-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    display:flex;
+
+    overflow:hidden;
+
+    border-radius:60px;
+
+    border:2px solid #E2E8F0;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.06);
+
+}
+
+
+
+.search-box input{
+
+    flex:1;
+
+    padding:20px 30px;
+
+    font-size:16px;
+
+    color:#0F172A;
+
+}
+
+
+
+.search-box button{
+
+    padding:0 35px;
+
+    background:#22C55E;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+
+
+.search-box button:hover{
+
+    background:#16A34A;
+
+}
+
+
+
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+
+@media(max-width:1100px){
+
+
+    .service-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .category-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    .service-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+
+    .category-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .service-card{
+
+        padding:30px 20px;
+
+    }
+
+
+}
+
+
+
+@media(max-width:480px){
+
+
+    .search-box{
+
+        flex-direction:column;
+
+        border-radius:20px;
+
+    }
+
+
+    .search-box button{
+
+        height:55px;
+
+    }
+
+
+    .category-card h3{
+
+        font-size:18px;
+
+    }
+
+
+}
+/* ==========================================
+   MCS PRODUCTS + PRODUCT CARDS
+   PART 4G
+========================================== */
+
+
+/* ==========================
+   PRODUCTS SECTION
+========================== */
+
+
+#products{
+
+    background:#F8FAFC;
+
+}
+
+
+
+.product-grid,
+.products-container,
+.products-grid{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    gap:30px;
+
+}
+
+
+
+/* ==========================
+   PRODUCT CARD
+========================== */
+
+
+.product-card{
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid #E2E8F0;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:520px;
+
+    transition:.35s ease;
+
+}
+
+
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#22C55E;
+
+}
+
+
+
+/* ==========================
+   PRODUCT IMAGE
+========================== */
+
+
+.product-image{
+
+    width:100%;
+
+    height:240px;
+
+    background:#F8FAFC;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+}
+
+
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    transition:.4s ease;
+
+}
+
+
+
+.product-card:hover .product-image img{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+/* Firebase simple image card */
+
+.products-container .product-card > img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:contain;
+
+    background:#F8FAFC;
+
+    display:block;
+
+}
+
+
+
+
+
+/* ==========================
+   STOCK BADGE
+========================== */
+
+
+.stock{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    background:#22C55E;
+
+    color:#ffffff;
+
+    padding:7px 18px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+/* ==========================
+   PRODUCT CONTENT
+========================== */
+
+
+.product-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:25px;
+
+}
+
+
+
+.product-content h3{
+
+    color:#0F172A;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+    min-height:48px;
+
+}
+
+
+
+.product-content p{
+
+    color:#64748B;
+
+    line-height:1.6;
+
+    margin-bottom:15px;
+
+    font-size:15px;
+
+}
+
+
+
+.product-content h4{
+
+    color:#16A34A;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+/* ==========================
+   WARRANTY
+========================== */
+
+
+.warranty{
+
+    display:inline-block;
+
+    width:max-content;
+
+    padding:8px 18px;
+
+    margin-bottom:20px;
+
+    border-radius:50px;
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+/* Firebase warranty span */
+
+.product-card span{
+
+    display:inline-block;
+
+    width:max-content;
+
+    margin:0 25px 18px;
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+/* ==========================
+   PRODUCT BUTTONS
+========================== */
+
+
+.product-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:auto;
+
+}
+
+
+
+.product-buttons a{
+
+    flex:1;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    background:#22C55E;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+
+
+.product-buttons a:last-child{
+
+    background:#25D366;
+
+}
+
+
+
+.product-buttons a:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* Firebase Button */
+
+.product-card button{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#25D366;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+
+.product-card button:hover{
+
+    opacity:.9;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+
+@media(max-width:1100px){
+
+
+    .product-grid,
+    .products-container,
+    .products-grid{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+    }
+
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    .product-grid,
+    .products-container,
+    .products-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+
+    .product-card{
+
+        min-height:500px;
+
+    }
+
+
+    .product-image{
+
+        height:210px;
+
+    }
+
+
+}
+
+
+
+@media(max-width:480px){
+
+
+    .product-content{
+
+        padding:20px;
+
+    }
+
+
+    .product-content h3{
+
+        font-size:18px;
+
+    }
+
+
+    .product-content h4{
+
+        font-size:24px;
+
+    }
+
+
+    .product-buttons{
+
+        flex-direction:column;
+
+    }
+
+
+}
+/* ==========================================
+   BRANDS SECTION CSS (CLEAN)
+========================================== */
+
+#brands{
+
+    background:#fff;
+
+}
+
+
+.brand-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:25px;
+
+    align-items:center;
+
+}
+
+
+/* Brand Card */
+
+.brand-grid div,
+.brand-box,
+.brand-card,
+.brand-item{
+
+    height:100px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#fff;
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    padding:15px;
+
+    transition:var(--transition);
+
+}
+
+
+
+/* Hover */
+
+.brand-grid div:hover,
+.brand-box:hover,
+.brand-card:hover,
+.brand-item:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+    0 20px 30px -10px rgba(34,197,94,.25);
+
+}
+
+
+
+/* Brand Image */
+
+.brand-grid img,
+.brand-box img,
+.brand-card img,
+.brand-item img{
+
+    max-width:130px;
+
+    max-height:55px;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+    display:block;
+
+    transition:.3s;
+
+}
+
+
+
+/* Image Hover */
+
+.brand-grid div:hover img,
+.brand-box:hover img,
+.brand-card:hover img,
+.brand-item:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* ==========================================
+   BRANDS RESPONSIVE
+========================================== */
+
+
+@media(max-width:1100px){
+
+    .brand-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    .brand-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:20px;
+
+    }
+
+
+    .brand-grid div,
+    .brand-box,
+    .brand-card,
+    .brand-item{
+
+        height:90px;
+
+    }
+
+}
+
+
+
+@media(max-width:480px){
+
+    .brand-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .brand-grid div,
+    .brand-box,
+    .brand-card,
+    .brand-item{
+
+        height:85px;
+
+    }
+
+}
+/* ==========================================
+   CUSTOMER REVIEWS SECTION CSS
+========================================== */
+
+
+#reviews{
+
+    background:var(--light);
+
+}
+
+
+.review-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+/* Review Card */
+
+.review-card{
+
+    background:#fff;
+
+    padding:35px 25px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+
+
+.review-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+}
+
+
+
+/* Customer Image */
+
+.review-card img{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin:0 auto 20px;
+
+    border:4px solid var(--primary);
+
+}
+
+
+
+/* Review Text */
+
+.review-card h3{
+
+    color:var(--secondary);
+
+    margin-bottom:10px;
+
+}
+
+
+
+.stars{
+
+    color:#FBBF24;
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.review-card p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+}
+
+
+
+
+
+/* ==========================================
+   CONTACT SECTION CSS
+========================================== */
+
+
+#contact{
+
+    background:#fff;
+
+}
+
+
+
+.contact-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
+    align-items:start;
+
+}
+
+
+
+/* Contact Information */
+
+
+.contact-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+
+.info-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    background:var(--light);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+
+
+.info-box:hover{
+
+    transform:translateX(8px);
+
+    border-color:var(--primary);
+
+}
+
+
+
+.info-box i{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(34,197,94,.15);
+
+    color:var(--primary);
+
+    font-size:25px;
+
+}
+
+
+
+.info-box h3{
+
+    color:var(--secondary);
+
+    margin-bottom:5px;
+
+}
+
+
+
+.info-box p{
+
+    color:var(--gray);
+
+}
+
+
+
+
+
+/* Contact Form */
+
+
+.contact-form{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid var(--border);
+
+}
+
+
+
+.contact-form form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+    font-size:15px;
+
+    color:var(--secondary);
+
+    transition:.3s;
+
+}
+
+
+
+.contact-form textarea{
+
+    resize:none;
+
+}
+
+
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:var(--primary);
+
+}
+
+
+
+.contact-form button{
+
+    padding:16px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+
+
+.contact-form button:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* ==========================================
+   GOOGLE MAP
+========================================== */
+
+
+#map{
+
+    padding:0;
+
+}
+
+
+
+#map iframe{
+
+    width:100%;
+
+    height:450px;
+
+    border:0;
+
+    display:block;
+
+}
+
+
+
+
+
+/* ==========================================
+   REVIEWS + CONTACT RESPONSIVE
+========================================== */
+
+
+@media(max-width:992px){
+
+    .review-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .contact-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+
+@media(max-width:576px){
+
+    .review-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .contact-form{
+
+        padding:25px;
+
+    }
+
+
+    .info-box{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+    #map iframe{
+
+        height:300px;
+
+    }
+
+}
+/* ==========================================
+   FOOTER SECTION CSS
+========================================== */
+
+
+footer{
+
+    background:#0F172A;
+
+    color:#fff;
+
+    padding:70px 8% 25px;
+
+}
+
+
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:40px;
+
+}
+
+
+
+/* Footer About */
+
+
+.footer-about img{
+
+    width:90px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.footer-about h2{
+
+    font-size:24px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.footer-about p{
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+/* Footer Links */
+
+
+.footer-links h3,
+.footer-services h3,
+.footer-social h3{
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+
+
+.footer-links a{
+
+    display:block;
+
+    color:#CBD5E1;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+
+
+.footer-links a:hover{
+
+    color:var(--primary);
+
+    padding-left:8px;
+
+}
+
+
+
+.footer-services p{
+
+    color:#CBD5E1;
+
+    margin-bottom:12px;
+
+}
+
+
+
+
+
+/* Social Icons */
+
+
+.footer-social{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+.footer-social a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.1);
+
+    color:#fff;
+
+    margin-bottom:10px;
+
+    transition:.3s;
+
+}
+
+
+
+.footer-social a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+
+footer hr{
+
+    margin:40px 0 20px;
+
+    border:none;
+
+    height:1px;
+
+    background:rgba(255,255,255,.15);
+
+}
+
+
+
+.copyright{
+
+    text-align:center;
+
+    color:#CBD5E1;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+/* ==========================================
+   FLOATING WHATSAPP BUTTON
+========================================== */
+
+
+.floating-whatsapp,
+#floatingWhatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:32px;
+
+    z-index:9999;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+
+    animation:pulse 2s infinite;
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+.floating-whatsapp:hover,
+#floatingWhatsapp:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+
+/* ==========================================
+   SCROLL TOP BUTTON
+========================================== */
+
+
+#scrollTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:105px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:20px;
+
+    z-index:9999;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+#scrollTop.show{
+
+    display:flex;
+
+}
+
+
+
+
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        transform:scale(1.12);
+
+    }
+
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+/* ==========================================
+   FOOTER RESPONSIVE
+========================================== */
+
+
+@media(max-width:992px){
+
+
+    .footer-container{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    footer{
+
+        padding:50px 5% 20px;
+
+    }
+
+
+    .footer-container{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+
+    .footer-about img{
+
+        margin:auto auto 20px;
+
+    }
+
+
+    .footer-social{
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+
+    .footer-social a{
+
+        margin:0;
+
+    }
+
+
+    .floating-whatsapp,
+    #floatingWhatsapp{
+
+        width:58px;
+
+        height:58px;
+
+        right:15px;
+
+        bottom:15px;
+
+        font-size:28px;
+
+    }
+
+
+    #scrollTop{
+
+        width:50px;
+
+        height:50px;
+
+        right:15px;
+
+        bottom:85px;
+
+    }
+
+
+}
+
+
+
+@media(max-width:480px){
+
+
+    .footer-container{
+
+        gap:30px;
+
+    }
+
+
+}
+/* =====================================
+   FINAL HEADER NAV ALIGNMENT FIX
+===================================== */
+
+header{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    flex-wrap:nowrap !important;
+    height:90px !important;
+    padding:0 5% !important;
+}
+
+
+/* Logo */
+.logo{
+    display:flex !important;
+    align-items:center !important;
+    flex-shrink:0;
+}
+
+
+/* Navigation */
+header nav{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:28px !important;
+    width:auto !important;
+    flex:1;
+}
+
+
+header nav a{
+    white-space:nowrap !important;
+    font-size:15px !important;
+}
+
+
+/* Buttons */
+.nav-buttons{
+    display:flex !important;
+    align-items:center !important;
+    gap:12px !important;
+    flex-shrink:0;
+}
+
+
+.btn-green,
+.btn-white{
+    white-space:nowrap !important;
+}
+
+
+/* Remove mobile menu */
+#menu,
+#mobileMenu{
+    display:none !important;
+}
+
+
+/* Mobile same style */
+@media(max-width:768px){
+
+    header{
+        height:auto !important;
+        padding:12px 3% !important;
+        flex-wrap:wrap !important;
+    }
+
+
+    header nav{
+        width:auto !important;
+        flex-wrap:wrap !important;
+        gap:12px !important;
+        flex:1;
+    }
+
+
+    header nav a{
+        font-size:13px !important;
+    }
+
+
+    .nav-buttons{
+        gap:8px !important;
+    }
+
+
+    .btn-green,
+    .btn-white{
+        padding:8px 14px !important;
+        font-size:12px !important;
+    }
+
+}
+/* =====================================
+   MOBILE DESKTOP-LIKE LAYOUT
+===================================== */
+
+@media (max-width:768px){
+
+    section{
+        padding:40px 12px !important;
+    }
+
+    .section-title h2{
+        font-size:24px !important;
+    }
+
+    .section-title p{
+        font-size:14px !important;
+    }
+
+    /* Keep grids */
+    .service-grid,
+    .category-grid,
+    .why-grid{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:12px !important;
+    }
+
+    .product-grid,
+    .products-container,
+    .products-grid{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:12px !important;
+    }
+
+    .brand-grid{
+        grid-template-columns:repeat(3,1fr) !important;
+        gap:10px !important;
+    }
+
+    .review-grid{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:12px !important;
+    }
+
+    .about-container,
+    .contact-container{
+        grid-template-columns:1fr !important;
+        gap:20px !important;
+    }
+
+    .footer-container{
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:20px !important;
+    }
+
+    /* Small cards */
+    .service-card,
+    .category-card,
+    .why-box,
+    .review-card,
+    .product-card{
+        padding:15px !important;
+        border-radius:14px !important;
+    }
+
+    .service-card i,
+    .category-card img,
+    .why-box i{
+        width:55px !important;
+        height:55px !important;
+        font-size:22px !important;
+        margin-bottom:12px !important;
+    }
+
+    .product-image{
+        height:140px !important;
+    }
+
+    .product-content{
+        padding:12px !important;
+    }
+
+    .product-content h3{
+        font-size:15px !important;
+        min-height:auto !important;
+    }
+
+    .product-content p{
+        font-size:12px !important;
+    }
+
+    .product-content h4{
+        font-size:20px !important;
+    }
+
+    .product-buttons{
+        flex-direction:row !important;
+        gap:8px !important;
+    }
+
+    .product-buttons a{
+        padding:8px !important;
+        font-size:12px !important;
+    }
+
+    nav{
+        gap:10px !important;
+    }
+
+    nav a{
+        font-size:12px !important;
+    }
+
+    .logo h2{
+        font-size:18px !important;
+    }
+
+    .btn-green,
+    .btn-white{
+        padding:8px 12px !important;
+        font-size:11px !important;
+    }
+}

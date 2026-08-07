@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCS Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-shell">
+
+        <header class="admin-header">
+
+            <div class="admin-brand">
+                <img src="../assets/logo.png" alt="MCS Logo" class="admin-logo">
+                <div class="brand-text">
+                    <h1>Meenakshi Control System</h1>
+                    <p>Professional Admin Dashboard</p>
+                </div>
+            </div>
+
+            <nav class="admin-nav">
+                <button class="nav-link active" type="button" data-target="dashboardSection">
+                    Dashboard
+                </button>
+
+                <button class="nav-link" type="button" data-target="productsSection">
+                    Products
+                </button>
+
+                <button class="nav-link" type="button" data-target="settingsSection">
+                    Settings
+                </button>
+
+                <button class="logout-btn" id="logoutBtn" type="button">
+                    Logout
+                </button>
+            </nav>
+
+        </header>
+
+        <main class="admin-container">
+
+            <!-- DASHBOARD OVERVIEW -->
+            <section id="dashboardSection" class="page-section active-page">
+
+                <div class="section-head">
+                    <div>
+                        <h2>Dashboard Overview</h2>
+                        <p>Live stats for products, stock, and categories</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-cards">
+
+                    <div class="card-box">
+                        <span class="card-label">Total Products</span>
+                        <h3 id="totalProducts">0</h3>
+                    </div>
+
+                    <div class="card-box">
+                        <span class="card-label">Available Stock</span>
+                        <h3 id="availableProducts">0</h3>
+                    </div>
+
+                    <div class="card-box">
+                        <span class="card-label">Out of Stock</span>
+                        <h3 id="outProducts">0</h3>
+                    </div>
+
+                    <div class="card-box">
+                        <span class="card-label">Categories</span>
+                        <h3 id="totalCategories">0</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PRODUCTS -->
+            <section id="productsSection" class="page-section">
+
+                <div class="section-head">
+                    <div>
+                        <h2>Product Management</h2>
+                        <p>Add, edit, delete, and manage stock / price easily</p>
+                    </div>
+
+                    <div class="section-actions">
+                        <input
+                            id="searchProduct"
+                            type="text"
+                            placeholder="Search product..."
+                            class="search-input">
+                    </div>
+                </div>
+
+                <!-- ADD PRODUCT -->
+                <div class="content-card">
+
+                    <div class="card-title-row">
+                        <h3>Add Product</h3>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <input
+                            id="productImage"
+                            type="file"
+                            accept="image/*"
+                            class="full">
+
+                        <input
+                            id="brand"
+                            type="text"
+                            placeholder="Brand">
+
+                        <input
+                            id="model"
+                            type="text"
+                            placeholder="Model Number">
+
+                        <input
+                            id="name"
+                            type="text"
+                            placeholder="Product Name">
+
+                        <input
+                            id="price"
+                            type="number"
+                            placeholder="Price">
+
+                        <input
+                            id="category"
+                            type="text"
+                            placeholder="Category">
+
+                        <input
+                            id="warranty"
+                            type="text"
+                            placeholder="Warranty Period">
+
+                        <select id="stock">
+                            <option value="Available">Available</option>
+                            <option value="Out of Stock">Out of Stock</option>
+                        </select>
+
+                        <textarea
+                            id="description"
+                            placeholder="Product Description"
+                            class="full"></textarea>
+
+                        <button
+                            class="add-btn full"
+                            id="addProduct"
+                            type="button">
+                            Add Product
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- PRODUCT LIST -->
+                <div class="content-card">
+
+                    <div class="card-title-row">
+                        <h3>Product List</h3>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table class="product-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Brand</th>
+                                    <th>Model</th>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Warranty</th>
+                                    <th>Stock</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="productList">
+                                <!-- Products render here -->
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SETTINGS -->
+            <section id="settingsSection" class="page-section">
+
+                <div class="section-head">
+                    <div>
+                        <h2>Settings</h2>
+                        <p>Update company details, admin email, and password</p>
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="content-card">
+
+                        <div class="card-title-row">
+                            <h3>Company Details</h3>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <input
+                                id="companyName"
+                                type="text"
+                                placeholder="Company Name"
+                                class="full">
+
+                            <input
+                                id="companyPhone"
+                                type="text"
+                                placeholder="Phone Number">
+
+                            <input
+                                id="companyEmail"
+                                type="email"
+                                placeholder="Company Email">
+
+                            <input
+                                id="businessHours"
+                                type="text"
+                                placeholder="Business Hours"
+                                class="full">
+
+                            <textarea
+                                id="companyAddress"
+                                placeholder="Company Address"
+                                class="full"></textarea>
+
+                            <button
+                                id="saveSettings"
+                                type="button"
+                                class="add-btn full">
+                                Save Company Settings
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="content-card">
+
+                        <div class="card-title-row">
+                            <h3>Admin Account</h3>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <input
+                                id="adminNewEmail"
+                                type="email"
+                                placeholder="New Admin Email"
+                                class="full">
+
+                            <input
+                                id="adminCurrentPassword"
+                                type="password"
+                                placeholder="Current Password">
+
+                            <input
+                                id="adminNewPassword"
+                                type="password"
+                                placeholder="New Password">
+
+                            <button
+                                id="changeAdminEmailBtn"
+                                type="button"
+                                class="edit-btn">
+                                Change Email
+                            </button>
+
+                            <button
+                                id="changeAdminPasswordBtn"
+                                type="button"
+                                class="edit-btn">
+                                Change Password
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- EDIT PRODUCT MODAL -->
+    <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+
+            <button type="button" class="modal-close" id="closeEditModal">
+                ×
+            </button>
+
+            <h3>Edit Product</h3>
+
+            <input type="hidden" id="editProductId">
+
+            <div class="form-grid">
+
+                <input
+                    id="editProductImage"
+                    type="file"
+                    accept="image/*"
+                    class="full">
+
+                <input
+                    id="editBrand"
+                    type="text"
+                    placeholder="Brand">
+
+                <input
+                    id="editModel"
+                    type="text"
+                    placeholder="Model Number">
+
+                <input
+                    id="editName"
+                    type="text"
+                    placeholder="Product Name">
+
+                <input
+                    id="editPrice"
+                    type="number"
+                    placeholder="Price">
+
+                <input
+                    id="editCategory"
+                    type="text"
+                    placeholder="Category">
+
+                <input
+                    id="editWarranty"
+                    type="text"
+                    placeholder="Warranty Period">
+
+                <select id="editStock">
+                    <option value="Available">Available</option>
+                    <option value="Out of Stock">Out of Stock</option>
+                </select>
+
+                <textarea
+                    id="editDescription"
+                    placeholder="Product Description"
+                    class="full"></textarea>
+
+                <button
+                    id="updateProductBtn"
+                    type="button"
+                    class="add-btn full">
+                    Update Product
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

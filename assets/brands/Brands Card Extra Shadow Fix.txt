@@ -1,0 +1,23 @@
+/* Brands Card Extra Shadow Fix */
+#brands .brand-box, 
+#brands .brand-card,
+#brands .brand-item {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    /* Richer, deeper layered shadow */
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Mouse over panna innum prominent shadow + Lift Effect */
+#brands .brand-box:hover, 
+#brands .brand-card:hover,
+#brands .brand-item:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 30px -10px rgba(34, 197, 94, 0.25), 
+                0 10px 15px -5px rgba(0, 0, 0, 0.08) !important;
+    border-color: #22c55e !important;
+}
+

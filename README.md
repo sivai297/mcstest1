@@ -1,2 +1,2 @@
-# mcstest1
-testing running
+# MCS
+Official Website for MCS
