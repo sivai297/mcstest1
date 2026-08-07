@@ -5045,7 +5045,7 @@ header nav a{
 
 .hero-tag{
     display:inline-block;
-    color:#22C55E;
+    color: black;
     font-weight:700;
     font-size:16px;
     margin-bottom:18px;
@@ -5056,15 +5056,15 @@ header nav a{
 /* ===== TYPING TEXT ===== */
 
 #typing{
-    color:#22C55E;
-    font-weight:800;
+    color:#0F172A;
+    font-weight:700;
     font-size:28px;
     margin:15px 0;
 }
-
 /* ===== RIGHT LOGO ===== */
 
 .hero-right{
+    flex:0 0 40%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -5075,7 +5075,7 @@ header nav a{
     height:280px;
     object-fit:contain;
     border-radius:50%;
-    background:#22C55E;
+    background:#ECFDF5;
     padding:30px;
     animation:floatLogo 3s ease-in-out infinite;
     box-shadow:0 15px 35px rgba(34,197,94,.35);
@@ -5113,4 +5113,26 @@ header nav a{
         padding:20px;
     }
 
+}
+.hero-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.hero-left{
+    flex:0 0 52%;
+    max-width:520px;
+}
+
+.hero-right{
+    flex:0 0 48%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.hero-left p{
+    max-width:470px;
+    line-height:1.8;
 }
