@@ -6011,3 +6011,17 @@ footer{
     }
 
 }
+/* ===== NAVBAR VIDEO OVERLAP FIX ===== */
+
+.navbar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+}
+
+.hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
