@@ -24,6 +24,13 @@ import {
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+// Prevent browser Back button from restoring dashboard
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        window.location.replace("index.html");
+    }
+});
+
 // =====================================================
 // GLOBAL VARIABLES
 // =====================================================
