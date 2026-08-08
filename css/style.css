@@ -5945,3 +5945,69 @@ header .btn-white{
         height:100px !important;
     }
 }
+/* =========================================
+   GLOBAL RIGHT GAP FIX
+   Applies to the ENTIRE WEBSITE
+========================================= */
+
+html,
+body{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow-x:hidden !important;
+}
+
+body{
+    box-sizing:border-box !important;
+}
+
+header,
+section,
+main,
+footer{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    box-sizing:border-box !important;
+}
+
+/* Prevent any child from creating extra page width */
+*,
+*::before,
+*::after{
+    box-sizing:border-box !important;
+}
+
+/* Hero video */
+#home,
+#home.hero,
+.hero-intro{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    html,
+    body{
+        width:100% !important;
+        max-width:100% !important;
+        overflow-x:hidden !important;
+    }
+
+    header,
+    section,
+    main,
+    footer{
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+}
