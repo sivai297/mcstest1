@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function setupAuth() {
     onAuthStateChanged(auth, (user) => {
         if (!user) {
-            window.location.href = "index.html";
+            window.location.replace("index.html");
             return;
         }
 
@@ -60,7 +60,6 @@ function setupAuth() {
         loadSettings();
     });
 }
-
 // =====================================================
 // NAVIGATION
 // =====================================================
@@ -188,13 +187,12 @@ function initEvents() {
 async function handleLogout() {
     try {
         await signOut(auth);
-        window.location.href = "index.html";
+        window.location.replace("index.html");
     } catch (error) {
         console.error(error);
         alert(error.message);
     }
 }
-
 // =====================================================
 // CLOUDINARY IMAGE UPLOAD
 // =====================================================
@@ -685,10 +683,13 @@ async function handleChangePassword() {
         // Update Firebase Authentication password
         await updatePassword(user, newPassword);
 
-        alert("Admin Password Changed Successfully.");
+alert("Admin Password Changed Successfully.\n\nPlease login again with your new password.");
 
-        document.getElementById("adminCurrentPassword").value = "";
-        document.getElementById("adminNewPassword").value = "";
+document.getElementById("adminCurrentPassword").value = "";
+document.getElementById("adminNewPassword").value = "";
+
+await signOut(auth);
+window.location.replace("index.html");
 
     } catch (error) {
         console.error("PASSWORD CHANGE ERROR:", error);
