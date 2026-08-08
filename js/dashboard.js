@@ -3,7 +3,7 @@ import { auth, db } from "./firebase-config.js";
 import {
     onAuthStateChanged,
     signOut,
-    updateEmail,
+    verifyBeforeUpdateEmail,
     updatePassword,
     reauthenticateWithCredential,
     EmailAuthProvider
@@ -556,7 +556,6 @@ async function handleSaveSettings() {
 // =====================================================
 // CHANGE ADMIN EMAIL
 // =====================================================
-
 async function handleChangeEmail() {
     try {
         const user = auth.currentUser;
@@ -591,7 +590,6 @@ async function handleChangeEmail() {
             return;
         }
 
-        // Re-authenticate the currently logged-in admin
         const credential = EmailAuthProvider.credential(
             user.email,
             currentPassword
@@ -599,10 +597,9 @@ async function handleChangeEmail() {
 
         await reauthenticateWithCredential(user, credential);
 
-        // Update Firebase Authentication email
-        await updateEmail(user, newEmail);
+        await verifyBeforeUpdateEmail(user, newEmail);
 
-        alert("Admin Email Changed Successfully.\n\nNew Email: " + newEmail);
+        alert("Verification email sent to: " + newEmail + "\n\nOpen that mail and verify it first.");
 
         document.getElementById("adminNewEmail").value = "";
         document.getElementById("adminCurrentPassword").value = "";
@@ -616,16 +613,16 @@ async function handleChangeEmail() {
                 alert("Current password is incorrect.");
                 break;
 
-            case "auth/email-already-in-use":
-                alert("This email is already used by another Firebase account.");
-                break;
-
             case "auth/invalid-email":
                 alert("Enter a valid email address.");
                 break;
 
+            case "auth/email-already-in-use":
+                alert("This email is already used by another account.");
+                break;
+
             case "auth/requires-recent-login":
-                alert("Please logout and login again, then try changing the email.");
+                alert("Please logout and login again, then try changing email.");
                 break;
 
             case "auth/network-request-failed":
@@ -637,6 +634,7 @@ async function handleChangeEmail() {
         }
     }
 }
+
 
 
 // =====================================================
