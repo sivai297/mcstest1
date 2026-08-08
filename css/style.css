@@ -6025,3 +6025,252 @@ footer{
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
+/* ==========================================
+   MCS MOBILE = DESKTOP STYLE LAYOUT
+   FINAL OVERRIDE
+========================================== */
+
+@media (max-width:768px){
+
+    /* =========================
+       COMMON SECTION
+    ========================= */
+
+    section{
+        padding-left:12px !important;
+        padding-right:12px !important;
+    }
+
+
+    /* =========================
+       ABOUT
+       IMAGE LEFT + CARDS RIGHT
+    ========================= */
+
+    .about-container{
+        display:grid !important;
+        grid-template-columns:48% 52% !important;
+        gap:12px !important;
+        align-items:center !important;
+    }
+
+    .about-image{
+        width:100% !important;
+    }
+
+    .about-image img{
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+    .about-content{
+        width:100% !important;
+        display:flex !important;
+        flex-direction:column !important;
+        gap:10px !important;
+    }
+
+    .about-card{
+        width:100% !important;
+        padding:12px !important;
+
+        display:flex !important;
+        flex-direction:row !important;
+
+        align-items:center !important;
+        text-align:left !important;
+
+        gap:10px !important;
+
+        border-radius:14px !important;
+    }
+
+    .about-card i{
+        min-width:42px !important;
+        width:42px !important;
+        height:42px !important;
+        font-size:18px !important;
+    }
+
+    .about-card h3{
+        font-size:13px !important;
+        line-height:1.2 !important;
+        margin-bottom:4px !important;
+    }
+
+    .about-card p{
+        font-size:10px !important;
+        line-height:1.45 !important;
+    }
+
+
+    /* =========================
+       WHY CHOOSE US
+       2 COLUMNS
+    ========================= */
+
+    .why-grid{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:12px !important;
+    }
+
+    .why-box{
+        padding:20px 10px !important;
+    }
+
+    .why-box i{
+        width:50px !important;
+        height:50px !important;
+        font-size:20px !important;
+        margin-bottom:10px !important;
+    }
+
+    .why-box h3{
+        font-size:13px !important;
+    }
+
+    .why-box p{
+        font-size:10px !important;
+        line-height:1.5 !important;
+    }
+
+
+    /* =========================
+       SERVICES
+       2 COLUMNS
+    ========================= */
+
+    .service-grid{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:12px !important;
+    }
+
+    .service-card{
+        padding:20px 10px !important;
+    }
+
+    .service-card i{
+        width:50px !important;
+        height:50px !important;
+        font-size:22px !important;
+        margin-bottom:10px !important;
+    }
+
+    .service-card h3{
+        font-size:13px !important;
+    }
+
+    .service-card p{
+        font-size:10px !important;
+    }
+
+
+    /* =========================
+       CATEGORIES
+       2 COLUMNS
+    ========================= */
+
+    .category-grid{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:12px !important;
+    }
+
+    .category-card{
+        padding:15px 10px !important;
+    }
+
+
+    /* =========================
+       PRODUCTS
+       2 COLUMNS
+    ========================= */
+
+    .product-grid,
+    .products-container,
+    .products-grid{
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:12px !important;
+    }
+
+    .product-card{
+        min-height:auto !important;
+        padding:0 !important;
+    }
+
+    .product-image{
+        height:140px !important;
+    }
+
+    .product-content{
+        padding:12px !important;
+    }
+
+    .product-content h3{
+        font-size:13px !important;
+    }
+
+    .product-content p{
+        font-size:10px !important;
+    }
+
+    .product-content h4{
+        font-size:18px !important;
+    }
+
+
+    /* =========================
+       BRANDS
+       2 COLUMNS
+    ========================= */
+
+    .brand-grid{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:10px !important;
+    }
+
+
+    /* =========================
+       REVIEWS
+       2 COLUMNS
+    ========================= */
+
+    .review-grid{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:12px !important;
+    }
+
+    .review-card{
+        padding:18px 10px !important;
+    }
+
+
+    /* =========================
+       CONTACT
+       KEEP SIDE BY SIDE
+    ========================= */
+
+    .contact-container{
+        display:grid !important;
+        grid-template-columns:1fr 1fr !important;
+        gap:12px !important;
+    }
+
+
+    /* =========================
+       FOOTER
+       2 COLUMNS
+    ========================= */
+
+    .footer-container{
+        display:grid !important;
+        grid-template-columns:repeat(2,1fr) !important;
+        gap:15px !important;
+    }
+
+}
