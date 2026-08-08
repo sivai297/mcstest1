@@ -7412,3 +7412,34 @@ footer,
 footer * {
     box-sizing: border-box !important;
 }
+/* =====================================
+   COUNTERS - MOBILE 2 COLUMN
+===================================== */
+
+@media (max-width: 768px) {
+
+    #counter {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+
+        width: 100% !important;
+        box-sizing: border-box !important;
+
+        padding: 40px 16px !important;
+        margin: 0 auto !important;
+
+        justify-content: center !important;
+        align-items: stretch !important;
+    }
+
+    #counter .counter-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+}
