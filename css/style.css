@@ -6841,3 +6841,38 @@ footer > p {
         font-size: 13px !important;
     }
 }
+/* ==========================================
+   CONTACT BOX CENTER ALIGN
+========================================== */
+
+@media (max-width: 768px) {
+
+    .contact-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .contact-info {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 18px !important;
+    }
+
+    .info-box {
+        width: min(100%, 380px) !important;
+        margin: 0 auto !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .info-box div {
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
