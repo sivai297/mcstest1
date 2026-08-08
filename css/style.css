@@ -5130,3 +5130,172 @@ header nav a{
     max-width:470px;
     line-height:1.8;
 }
+/*==================================================
+   MCS NAVBAR STRICT SINGLE ROW OVERRIDE CSS
+==================================================*/
+
+/* 1. Header Frame - Force Single Row (No Wrap) */
+header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 75px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 2% !important;
+    background: #ffffff !important;
+    z-index: 99999 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Page Top Content Protection */
+body {
+    padding-top: 75px !important;
+}
+
+/* 2. Logo Section */
+.logo,
+header .logo {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+}
+
+.logo img,
+header .logo img {
+    width: 42px !important;
+    height: 42px !important;
+    object-fit: contain !important;
+}
+
+.logo h2,
+header .logo h2 {
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+}
+
+.logo span,
+header .logo span {
+    font-size: 10px !important;
+    color: #64748B !important;
+    white-space: nowrap !important;
+    display: block !important;
+}
+
+/* 3. Navigation Links (Center Row) */
+header nav,
+nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin: 0 auto !important;
+    padding: 0 5px !important;
+}
+
+header nav a,
+nav a {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #0F172A !important;
+    white-space: nowrap !important;
+    padding: 4px 2px !important;
+    margin: 0 !important;
+}
+
+/* 4. Action Buttons (Right Row) */
+.nav-buttons,
+header .nav-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+}
+
+.btn-green,
+.btn-white,
+header .btn-green,
+header .btn-white {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px 12px !important;
+    border-radius: 50px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    height: 34px !important;
+}
+
+.btn-green {
+    background: #22C55E !important;
+    color: #ffffff !important;
+}
+
+.btn-white {
+    background: #ffffff !important;
+    color: #22C55E !important;
+    border: 1.5px solid #22C55E !important;
+}
+
+/* Hide Hamburger Menu to maintain 1 Row across screens */
+#menu,
+#mobileMenu {
+    display: none !important;
+}
+
+/* 5. Mobile Screen Auto-Scale Adjustments */
+@media (max-width: 768px) {
+    header {
+        height: 65px !important;
+        padding: 0 1.5% !important;
+    }
+
+    body {
+        padding-top: 65px !important;
+    }
+
+    .logo img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .logo h2 {
+        font-size: 12px !important;
+    }
+
+    .logo span {
+        display: none !important; /* Hide subtitle text on mobile to save space */
+    }
+
+    header nav {
+        gap: 6px !important;
+    }
+
+    header nav a {
+        font-size: 10px !important;
+    }
+
+    .btn-green,
+    .btn-white {
+        padding: 4px 8px !important;
+        font-size: 9px !important;
+        height: 28px !important;
+    }
+}
