@@ -560,31 +560,84 @@ async function handleSaveSettings() {
 async function handleChangeEmail() {
     try {
         const user = auth.currentUser;
-        const newEmail = document.getElementById("adminNewEmail").value.trim();
-        const currentPassword = document.getElementById("adminCurrentPassword").value.trim();
 
         if (!user) {
-            alert("No admin logged in");
+            alert("Admin session expired. Please login again.");
+            window.location.href = "index.html";
             return;
         }
 
-        if (!newEmail || !currentPassword) {
-            alert("Enter new email and current password");
+        const newEmail = document
+            .getElementById("adminNewEmail")
+            .value
+            .trim();
+
+        const currentPassword = document
+            .getElementById("adminCurrentPassword")
+            .value;
+
+        if (!newEmail) {
+            alert("Enter New Admin Email");
             return;
         }
 
-        const credential = EmailAuthProvider.credential(user.email, currentPassword);
+        if (!currentPassword) {
+            alert("Enter Current Password");
+            return;
+        }
+
+        if (newEmail.toLowerCase() === user.email.toLowerCase()) {
+            alert("New email is same as current email.");
+            return;
+        }
+
+        // Re-authenticate the currently logged-in admin
+        const credential = EmailAuthProvider.credential(
+            user.email,
+            currentPassword
+        );
+
         await reauthenticateWithCredential(user, credential);
+
+        // Update Firebase Authentication email
         await updateEmail(user, newEmail);
 
-        alert("Admin Email Updated Successfully");
+        alert("Admin Email Changed Successfully.\n\nNew Email: " + newEmail);
+
         document.getElementById("adminNewEmail").value = "";
         document.getElementById("adminCurrentPassword").value = "";
+
     } catch (error) {
-        console.error(error);
-        alert(error.message);
+        console.error("EMAIL CHANGE ERROR:", error);
+
+        switch (error.code) {
+            case "auth/wrong-password":
+            case "auth/invalid-credential":
+                alert("Current password is incorrect.");
+                break;
+
+            case "auth/email-already-in-use":
+                alert("This email is already used by another Firebase account.");
+                break;
+
+            case "auth/invalid-email":
+                alert("Enter a valid email address.");
+                break;
+
+            case "auth/requires-recent-login":
+                alert("Please logout and login again, then try changing the email.");
+                break;
+
+            case "auth/network-request-failed":
+                alert("Network error. Check your internet connection.");
+                break;
+
+            default:
+                alert("Email change failed: " + error.message);
+        }
     }
 }
+
 
 // =====================================================
 // CHANGE ADMIN PASSWORD
@@ -593,29 +646,76 @@ async function handleChangeEmail() {
 async function handleChangePassword() {
     try {
         const user = auth.currentUser;
-        const currentPassword = document.getElementById("adminCurrentPassword").value.trim();
-        const newPassword = document.getElementById("adminNewPassword").value.trim();
 
         if (!user) {
-            alert("No admin logged in");
+            alert("Admin session expired. Please login again.");
+            window.location.href = "index.html";
             return;
         }
 
-        if (!currentPassword || !newPassword) {
-            alert("Enter current password and new password");
+        const currentPassword = document
+            .getElementById("adminCurrentPassword")
+            .value;
+
+        const newPassword = document
+            .getElementById("adminNewPassword")
+            .value;
+
+        if (!currentPassword) {
+            alert("Enter Current Password");
             return;
         }
 
-        const credential = EmailAuthProvider.credential(user.email, currentPassword);
+        if (!newPassword) {
+            alert("Enter New Password");
+            return;
+        }
+
+        if (newPassword.length < 6) {
+            alert("New password must be at least 6 characters.");
+            return;
+        }
+
+        // Re-authenticate the currently logged-in admin
+        const credential = EmailAuthProvider.credential(
+            user.email,
+            currentPassword
+        );
+
         await reauthenticateWithCredential(user, credential);
+
+        // Update Firebase Authentication password
         await updatePassword(user, newPassword);
 
-        alert("Admin Password Updated Successfully");
+        alert("Admin Password Changed Successfully.");
+
         document.getElementById("adminCurrentPassword").value = "";
         document.getElementById("adminNewPassword").value = "";
+
     } catch (error) {
-        console.error(error);
-        alert(error.message);
+        console.error("PASSWORD CHANGE ERROR:", error);
+
+        switch (error.code) {
+            case "auth/wrong-password":
+            case "auth/invalid-credential":
+                alert("Current password is incorrect.");
+                break;
+
+            case "auth/weak-password":
+                alert("New password is too weak.");
+                break;
+
+            case "auth/requires-recent-login":
+                alert("Please logout and login again, then try changing the password.");
+                break;
+
+            case "auth/network-request-failed":
+                alert("Network error. Check your internet connection.");
+                break;
+
+            default:
+                alert("Password change failed: " + error.message);
+        }
     }
 }
 
