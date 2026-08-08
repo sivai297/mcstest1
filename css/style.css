@@ -6582,3 +6582,262 @@ footer .container,
         line-height: 1.6 !important;
     }
 }
+/* =========================================================
+   MCS FOOTER - MOBILE OVERFLOW FIX
+   Paste this at the VERY END of style.css
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.footer-container {
+    width: 100% !important;
+    max-width: 1200px !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    padding: 60px 35px 35px !important;
+    box-sizing: border-box !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr) !important;
+    gap: 40px !important;
+}
+
+/* Prevent every footer section from pushing width */
+.footer-about,
+.footer-links,
+.footer-social {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* LEFT SIDE */
+.footer-about {
+    text-align: left !important;
+}
+
+.footer-about img {
+    width: 120px !important;
+    height: 120px !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 0 20px 0 !important;
+}
+
+.footer-about h2 {
+    max-width: 100% !important;
+    margin: 0 0 18px !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+}
+
+.footer-about p {
+    max-width: 100% !important;
+    margin: 0 !important;
+    overflow-wrap: break-word !important;
+}
+
+/* RIGHT SIDE - QUICK LINKS */
+.footer-links {
+    text-align: left !important;
+}
+
+.footer-links h3 {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+}
+
+.footer-links a {
+    display: block !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+}
+
+/* SOCIAL */
+.footer-social {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 18px !important;
+    flex-wrap: wrap !important;
+}
+
+.footer-social h3 {
+    width: 100% !important;
+    margin: 0 0 5px !important;
+}
+
+.footer-social a {
+    flex: 0 0 auto !important;
+}
+
+/* FOOTER BOTTOM */
+footer > hr {
+    width: calc(100% - 70px) !important;
+    max-width: 1130px !important;
+    margin: 0 auto 25px !important;
+    box-sizing: border-box !important;
+}
+
+footer > p {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 35px 30px !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    footer {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    .footer-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 45px 25px 30px !important;
+
+        grid-template-columns:
+            minmax(0, 1.35fr)
+            minmax(0, 0.85fr) !important;
+
+        gap: 25px !important;
+    }
+
+    .footer-about {
+        text-align: left !important;
+    }
+
+    .footer-about img {
+        width: 85px !important;
+        height: 85px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .footer-about h2 {
+        font-size: 24px !important;
+        line-height: 1.35 !important;
+    }
+
+    .footer-about p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+    }
+
+    .footer-links h3,
+    .footer-social h3 {
+        font-size: 22px !important;
+    }
+
+    .footer-links a {
+        font-size: 16px !important;
+        line-height: 2.1 !important;
+    }
+
+    .footer-social {
+        grid-column: 1 / -1 !important;
+        justify-content: flex-start !important;
+        gap: 12px !important;
+        margin-top: 10px !important;
+    }
+
+    .footer-social h3 {
+        width: 100% !important;
+    }
+
+    footer > hr {
+        width: calc(100% - 50px) !important;
+        margin: 0 25px 20px !important;
+    }
+
+    footer > p {
+        width: 100% !important;
+        padding: 0 25px 25px !important;
+        font-size: 14px !important;
+        line-height: 1.7 !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .footer-container {
+        padding: 40px 18px 25px !important;
+
+        grid-template-columns:
+            minmax(0, 1.25fr)
+            minmax(0, 0.75fr) !important;
+
+        gap: 18px !important;
+    }
+
+    .footer-about img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .footer-about h2 {
+        font-size: 20px !important;
+        line-height: 1.3 !important;
+    }
+
+    .footer-about p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    .footer-links h3 {
+        font-size: 18px !important;
+    }
+
+    .footer-links a {
+        font-size: 14px !important;
+        line-height: 2 !important;
+    }
+
+    .footer-social {
+        gap: 10px !important;
+    }
+
+    footer > hr {
+        width: calc(100% - 36px) !important;
+        margin-left: 18px !important;
+        margin-right: 18px !important;
+    }
+
+    footer > p {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+        font-size: 13px !important;
+    }
+}
