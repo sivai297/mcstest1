@@ -7443,3 +7443,276 @@ footer * {
     }
 
 }
+/* ==========================================
+   ABOUT SECTION - IMAGE LEFT / 3 BOXES RIGHT
+   DESKTOP + MOBILE SAME SIDE-BY-SIDE LAYOUT
+========================================== */
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+
+    gap: 24px !important;
+
+    align-items: stretch !important;
+}
+
+
+/* ==========================================
+   LEFT - BIG PHOTO
+========================================== */
+
+.about-image {
+    width: 100% !important;
+    height: 100% !important;
+
+    min-height: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+
+    border-radius: 18px !important;
+}
+
+.about-image img {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    /*
+       IMPORTANT:
+       Full photo visible.
+       No crop.
+    */
+    object-fit: contain !important;
+    object-position: center !important;
+
+    border-radius: 18px !important;
+}
+
+
+/* ==========================================
+   RIGHT - 3 BOXES
+========================================== */
+
+.about-content {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: grid !important;
+    grid-template-rows: repeat(3, 1fr) !important;
+
+    gap: 18px !important;
+}
+
+
+/* ==========================================
+   EACH ABOUT BOX
+========================================== */
+
+.about-card {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+
+    display: grid !important;
+
+    /*
+       Icon column + Content column
+    */
+    grid-template-columns: 60px minmax(0, 1fr) !important;
+
+    grid-template-rows: auto 1fr !important;
+
+    column-gap: 16px !important;
+
+    align-items: center !important;
+
+    padding: 22px !important;
+
+    margin: 0 !important;
+}
+
+
+/* ==========================================
+   ICON - LEFT CENTER
+========================================== */
+
+.about-card > i {
+    grid-column: 1 !important;
+    grid-row: 1 / 3 !important;
+
+    width: 52px !important;
+    height: 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* ==========================================
+   HEADING - RIGHT TOP
+========================================== */
+
+.about-card h3 {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    margin: 0 0 6px 0 !important;
+
+    text-align: left !important;
+
+    line-height: 1.3 !important;
+}
+
+
+/* ==========================================
+   PARAGRAPH - RIGHT BELOW HEADING
+========================================== */
+
+.about-card p {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+
+    margin: 0 !important;
+
+    text-align: left !important;
+
+    line-height: 1.6 !important;
+}
+
+
+/* ==========================================
+   MOBILE
+   KEEP IMAGE LEFT + 3 BOXES RIGHT
+========================================== */
+
+@media (max-width: 768px) {
+
+    .about-container {
+        width: 100% !important;
+
+        grid-template-columns:
+            minmax(0, 0.85fr)
+            minmax(0, 1.15fr) !important;
+
+        gap: 12px !important;
+
+        align-items: stretch !important;
+    }
+
+    .about-image {
+        height: 100% !important;
+
+        min-height: 0 !important;
+
+        border-radius: 12px !important;
+    }
+
+    .about-image img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: contain !important;
+        object-position: center !important;
+
+        border-radius: 12px !important;
+    }
+
+    .about-content {
+        gap: 10px !important;
+
+        grid-template-rows: repeat(3, 1fr) !important;
+    }
+
+    .about-card {
+        grid-template-columns: 34px minmax(0, 1fr) !important;
+
+        column-gap: 8px !important;
+
+        padding: 12px 10px !important;
+
+        border-radius: 12px !important;
+    }
+
+    .about-card > i {
+        width: 32px !important;
+        height: 32px !important;
+
+        font-size: 16px !important;
+    }
+
+    .about-card h3 {
+        font-size: 13px !important;
+
+        line-height: 1.25 !important;
+
+        margin-bottom: 4px !important;
+    }
+
+    .about-card p {
+        font-size: 10px !important;
+
+        line-height: 1.45 !important;
+    }
+}
+
+
+/* ==========================================
+   VERY SMALL PHONE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .about-container {
+        grid-template-columns:
+            minmax(0, 0.8fr)
+            minmax(0, 1.2fr) !important;
+
+        gap: 8px !important;
+    }
+
+    .about-content {
+        gap: 8px !important;
+    }
+
+    .about-card {
+        grid-template-columns: 28px minmax(0, 1fr) !important;
+
+        column-gap: 6px !important;
+
+        padding: 9px 7px !important;
+    }
+
+    .about-card > i {
+        width: 27px !important;
+        height: 27px !important;
+
+        font-size: 13px !important;
+    }
+
+    .about-card h3 {
+        font-size: 11px !important;
+    }
+
+    .about-card p {
+        font-size: 9px !important;
+
+        line-height: 1.35 !important;
+    }
+}
