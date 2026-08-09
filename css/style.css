@@ -7853,3 +7853,10 @@ footer * {
     visibility: visible !important;
     pointer-events: auto !important;
 }
+#scrollTop{
+    display:none !important;
+}
+
+#scrollTop.show{
+    display:flex !important;
+}
