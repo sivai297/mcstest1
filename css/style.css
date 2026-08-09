@@ -7833,3 +7833,9 @@ footer * {
 .slider-controls {
     display: none !important;
 }
+/* Fix typing animation layout jump */
+#typing {
+    height: 34px !important;
+    min-height: 34px !important;
+    line-height: 34px !important;
+}
