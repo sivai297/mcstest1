@@ -1003,5 +1003,20 @@ class="floating-whatsapp">
 
 <script type="module" src="js/firebase-config.js"></script>
 <script type="module" src="js/products.js"></script>
+<script>
+window.addEventListener("scroll", function () {
+
+    const scrollBtn = document.getElementById("scrollToTop");
+
+    if (!scrollBtn) return;
+
+    if (window.scrollY > 300) {
+        scrollBtn.classList.add("show");
+    } else {
+        scrollBtn.classList.remove("show");
+    }
+
+});
+</script>
 </body>
 </html>
