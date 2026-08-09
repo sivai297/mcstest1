@@ -7839,24 +7839,3 @@ footer * {
     min-height: 34px !important;
     line-height: 34px !important;
 }
-/* Scroll To Top - Hidden Initially */
-#scrollToTop {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transition: opacity 0.3s ease, visibility 0.3s ease !important;
-}
-
-/* Show after scrolling */
-#scrollToTop.show {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-}
-#scrollTop{
-    display:none !important;
-}
-
-#scrollTop.show{
-    display:flex !important;
-}
