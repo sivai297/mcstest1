@@ -7770,3 +7770,62 @@ footer * {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
+/* =========================================
+   MOBILE FOOTER HEIGHT FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    footer {
+        padding: 45px 20px 20px !important;
+        min-height: auto !important;
+    }
+
+    .footer-container {
+        padding: 0 !important;
+        gap: 20px !important;
+    }
+
+    .footer-logo {
+        margin-bottom: 12px !important;
+    }
+
+    .footer-logo img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    footer h2,
+    footer h3 {
+        margin-top: 10px !important;
+        margin-bottom: 12px !important;
+    }
+
+    footer p {
+        margin-top: 8px !important;
+        margin-bottom: 15px !important;
+        line-height: 1.5 !important;
+    }
+
+    .social-icons {
+        margin-top: 15px !important;
+        margin-bottom: 25px !important;
+        gap: 15px !important;
+    }
+
+    .social-icons a {
+        width: 58px !important;
+        height: 58px !important;
+    }
+
+    .footer-bottom {
+        margin-top: 15px !important;
+        padding-top: 15px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .footer-bottom p {
+        margin: 0 !important;
+        line-height: 1.5 !important;
+    }
+}
